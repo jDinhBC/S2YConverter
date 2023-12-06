@@ -5,10 +5,6 @@ import base64
 from requests import post, get
 import re
 
-load_dotenv()
-
-client_id = os.getenv("CLIENT_ID")
-client_secret = os.getenv("CLIENT_SECRET")
 class SpotifyAPI:
 
     def __init__(self):
@@ -19,7 +15,7 @@ class SpotifyAPI:
         self.base_url = 'https://api.spotify.com/v1/'
 
     def get_token(self):
-        auth_string = client_id + ":" + client_secret
+        auth_string = self.client_id + ":" + self.client_secret
         auth_bytes = auth_string.encode("utf-8")
         auth_base64 = str(base64.b64encode(auth_bytes), "utf-8")
 
