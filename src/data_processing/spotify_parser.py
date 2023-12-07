@@ -1,10 +1,10 @@
-from spotify_playlist import SpotifyPlaylist
-from spotify_track import SpotifyTrack
+from classes.spotify_playlist import SpotifyPlaylist
+from classes.spotify_track import SpotifyTrack
 
 class SpotifyParser:
 
-    def __init__(self, response) -> None:
-        self.raw_data = response
+    def __init__(self) -> None:
+        pass
 
     # Spotify Data structure
     """
@@ -44,13 +44,13 @@ class SpotifyParser:
     
     
 
-    def createSpotifyPlaylist(self):
+    def spotifyPlaylistMapper(self, raw_data) -> SpotifyPlaylist():
         playlist = SpotifyPlaylist()
-        playlist.name = self.raw_data['name']
-        playlist.playlist_id = self.raw_data['id']
+        playlist.name = raw_data['name']
+        playlist.playlist_id = raw_data['id']
         tracks = set()
 
-        for item in self.raw_data['items']:
+        for item in raw_data['tracks']['items']:
             track = SpotifyTrack()
             track.track_id = item['track']['id']
             track.name = item['track']['name']
@@ -63,4 +63,4 @@ class SpotifyParser:
             tracks.add(track)
 
         playlist.tracks = tracks
-        return
+        return playlist

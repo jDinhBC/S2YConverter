@@ -66,6 +66,18 @@ class SpotifyAPI:
         header = self.get_auth_header()
         query = f"playlists/{self.get_playlist_id(url)}"
         query_url = self.base_url + query
-        print(query_url)
         result = get(query_url, headers=header)
-        return result
+
+        if result.status_code == 200:
+            try:
+                json_result = result.json()
+                print(json_result)
+                print('\n')
+                return json_result
+            except ValueError as e:
+                print("Error parsing JSON:", e)
+                return None
+        else:
+            print("Request Failed:", result.status_code)
+
+        return None

@@ -1,4 +1,4 @@
-from spotify_track import SpotifyTrack
+from classes.spotify_track import SpotifyTrack
 
 class SpotifyPlaylist:
 

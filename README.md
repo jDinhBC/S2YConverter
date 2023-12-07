@@ -5,8 +5,12 @@ Takes a spotify playlist and creates a youtube playlist with the same songs, bec
 Takes user inputted spotify playlist url
 Connect and use Spotify api to extract data
 Convert data into a data structure (for database)
+Check against database for duplicate
 Connect to youtube api
-Convert database data structure to youtube specific
-Follow Youtube api prerequisites
 Create a playlist
+Find playlist ID
+Search video id per track
+Insert videos into youtube playlist
+Add to database
 Show playlist to user
+

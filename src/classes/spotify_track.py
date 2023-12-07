@@ -1,3 +1,4 @@
+
 class SpotifyTrack:
 
     def __init__(self) -> None:
