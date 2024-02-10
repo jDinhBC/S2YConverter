@@ -35,24 +35,7 @@ class SpotifyAPI:
 
     def get_auth_header(self):
         return {"Authorization": "Bearer "+ self.token}
-
-    def get_user_id(self, url):
-        # takes url of spotify user profile and extracts id
-        url = input("Enter spotify profile url: ")
-        pattern = r'https://open\.spotify\.com/user/([A-Za-z0-9]+)'
-        checkUrl = re.fullmatch(pattern, url)
-
-        if not checkUrl:
-            return "Url does not fit the criteria"
-        
-        matches = re.search(pattern, url)
-
-        if not matches:
-            return "User ID not found"
-        
-        user_id = matches.group(1)
-        return user_id
-
+    
     def get_playlist_id(self, url):
         # Takes url and extracts playlist ID
         pattern = r"https://open\.spotify\.com/playlist/([^/?]+)"
@@ -71,8 +54,6 @@ class SpotifyAPI:
         if result.status_code == 200:
             try:
                 json_result = result.json()
-                print(json_result)
-                print('\n')
                 return json_result
             except ValueError as e:
                 print("Error parsing JSON:", e)

@@ -1,5 +1,6 @@
-from classes.spotify_playlist import SpotifyPlaylist
-from classes.spotify_track import SpotifyTrack
+from src.classes.spotify_playlist import SpotifyPlaylist
+from src.classes.spotify_track import SpotifyTrack
+from pprint import pprint
 
 class SpotifyParser:
 
@@ -51,16 +52,16 @@ class SpotifyParser:
         tracks = set()
 
         for item in raw_data['tracks']['items']:
-            track = SpotifyTrack()
-            track.track_id = item['track']['id']
-            track.name = item['track']['name']
-            track.album = item['track']['album']['name']
-            track.artist = item['track']["artists"]
-            track.duration = item['track']["duration_ms"]
-            track.popularity = item['track']['popularity']
-            track.release_date = item['track']['album']['release_date']
+            track_dict = {
+                'track_id': item['track']['id'],
+                'name': item['track']['name'],
+                'album': item['track']['album']['name'],
+                'artist': item['track']["artists"],
+                'duration': item['track']["duration_ms"],
+                'popularity': item['track']['popularity'],
+                'release_date': item['track']['album']['release_date']
+            }
 
-            tracks.add(track)
-
-        playlist.tracks = tracks
+        track = SpotifyTrack.from_dict(track_dict)
+        tracks.add(track)
         return playlist
