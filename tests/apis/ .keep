@@ -7,4 +7,5 @@ class TestSpotifyParserApi(unittest.Testcase):
 		self.link = "https://open.spotify.com/playlist/5GUWrtpZ83SjfHTh50Wnu8"
 		self.correct =
 
-	def 
+	def TestSpotifyApi(Unittest.Testcase):
+		result = SpotifyApi.
