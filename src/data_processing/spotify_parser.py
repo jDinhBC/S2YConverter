@@ -56,7 +56,7 @@ class SpotifyParser:
                 'track_id': item['track']['id'],
                 'name': item['track']['name'],
                 'album': item['track']['album']['name'],
-                'artist': item['track']["artists"],
+                'artist': item['track']["artists"]["name"],
                 'duration': item['track']["duration_ms"],
                 'popularity': item['track']['popularity'],
                 'release_date': item['track']['album']['release_date']
