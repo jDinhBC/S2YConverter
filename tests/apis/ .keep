@@ -3,5 +3,8 @@ from src.api.spotify_api import SpotifyApi
 
 class TestSpotifyParserApi(unittest.Testcase):
 
-	def setUp(Unittest.Testcase): 
-		self.link = ''
+	def setUp(self) -> None: 
+		self.link = "https://open.spotify.com/playlist/5GUWrtpZ83SjfHTh50Wnu8"
+		self.correct =
+
+	def 
