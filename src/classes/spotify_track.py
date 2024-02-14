@@ -32,8 +32,3 @@ class SpotifyTrack:
                     self.popularity == other.popularity and
                     self.release_date == other.release_date)
         return False
-
-    def __hash__(self):
-        # Convert each artist dictionary to a string
-        artists_strings = [str(artist) for artist in self.artist]
-        return hash((self.track_id, self.name, self.album, tuple(artists_strings), self.duration, self.popularity, self.release_date))
