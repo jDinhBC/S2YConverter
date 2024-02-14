@@ -11,4 +11,4 @@ class TestSpotifyParserApi(unittest.Testcase):
 		spotify_instance = SpotifyAPI()
     result = spotify_instance.get_playlist(self.link)
 
-		assertEqual(result, self.correct)
+		self.assertEqual(result, self.correct)
