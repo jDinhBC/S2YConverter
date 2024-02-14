@@ -1,4 +1,5 @@
 import unittests
 from src.api.spotify_api import SpotifyApi
 
+class TestSpotifyParserApi(unittest.Testcase):
 
