@@ -14,12 +14,7 @@ class TestSpotifyPlaylistMapper(unittest.TestCase):
             tracks={
                 SpotifyTrack.from_dict({
                     'album': 'Stand Up',
-                    'artist': [{'external_urls': {'spotify': 'https://open.spotify.com/artist/4Kxlr1PRlDKEB0ekOCyHgX'},
-                                'href': 'https://api.spotify.com/v1/artists/4Kxlr1PRlDKEB0ekOCyHgX',
-                                'id': '4Kxlr1PRlDKEB0ekOCyHgX',
-                                'name': 'BIGBANG',
-                                'type': 'artist',
-                                'uri': 'spotify:artist:4Kxlr1PRlDKEB0ekOCyHgX'}],
+                    'artist': 'BIGBANG',
                     'duration': 256359,
                     'name': 'Haru Haru',
                     'popularity': 65,
@@ -28,12 +23,7 @@ class TestSpotifyPlaylistMapper(unittest.TestCase):
                 }),
                 SpotifyTrack.from_dict({
                     'album': '夜に駆ける',
-                    'artist': [{'external_urls': {'spotify': 'https://open.spotify.com/artist/64tJ2EAv1R6UaZqc4iOCyj'},
-                                'href': 'https://api.spotify.com/v1/artists/64tJ2EAv1R6UaZqc4iOCyj',
-                                'id': '64tJ2EAv1R6UaZqc4iOCyj',
-                                'name': 'YOASOBI',
-                                'type': 'artist',
-                                'uri': 'spotify:artist:64tJ2EAv1R6UaZqc4iOCyj'}],
+                    'artist': 'YOASOBI',
                     'duration': 261013,
                     'name': '夜に駆ける',
                     'popularity': 75,
